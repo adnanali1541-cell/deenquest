@@ -1,28 +1,25 @@
-# DeenQuest Version 8 — GitHub-ready Android project
+# DeenQuest Version 9 — GitHub-ready Android project
 
-Built from the uploaded working Version 7 project. Existing 500 questions, source references, topic filters, modes, logo, sound, vibration, and offline progress key (`deenquest-v1`) are retained.
+Built from the user-provided, working Version 8.3 source. Preserves all 500 questions and source references, existing interface, sound, badges, missions, streaks and the fixed initial home screen.
 
-## Version 8 additions
-- Three daily missions (one quiz, five correct answers, two topics) worth 25 XP each; missions reset using device local date.
-- Seven-day learning journey calendar, streak tracking, and one-time 100 XP bonus when a seven-day streak is first reached.
-- Six additional badges and progress dashboard with answer accuracy and mission rewards.
-- Accessible celebration popup for new mission or streak rewards, respecting reduced-motion preferences.
+## New in Version 9
+- Daily welcome reward: tap to claim 10 XP once per local calendar day.
+- Topic Mastery: accuracy and answer counts for five topics, tracked starting in V9.
+- Quiz result stars (1–3), animated with reduced-motion support.
+- XP breakdown on the result screen for quiz, missions and streak bonus.
+- Updated footer.
+
+All new data is saved in the existing `deenquest-v1` localStorage record to preserve old progress. Topic mastery only includes answers from V9 onward; earlier answers cannot be reliably attributed by topic.
 
 ## Build
-Upload the extracted contents to the **repository root**, preserving `.github/workflows/android.yml`. Run **Actions → Build DeenQuest APK**. Download the debug APK artifact.
+Extract this ZIP and upload the **contents** to the root of your existing GitHub repository, preserving the `.github` and `app` directories. Commit to `main`, open GitHub Actions, run **Build DeenQuest APK**, then download the `DeenQuest-debug-apk` artifact.
 
-## Notes
-- This is a debug build for testing, not a signed Google Play release.
-- The build and device behavior must be verified via GitHub Actions and your Samsung phone.
-- Existing local progress is preserved only if Android installs the update with the same application ID and compatible signing key. Back up the current APK before upgrading.
+## Testing
+1. Fully close and reopen the app; verify all home widgets appear without starting a quiz.
+2. Claim the daily welcome reward; check XP rises by 10 and the button disables.
+3. Reopen the app; check the reward remains claimed.
+4. Finish a quiz; check stars and the XP breakdown.
+5. Check Topic Mastery updates for the questions answered.
+6. Verify previous progress and all existing game features.
 
-
-## Version 8.1 startup fix
-The home screen now calls `home()` on initial page load so learning modes, topics, daily missions, streak, badges, dashboard and saved statistics appear immediately without first starting a quiz. No questions or progress-storage keys were changed.
-
-
-## Version 8.2 startup repair
-Removed an eager `home()` call that ran while the HTML document was still being parsed, before the home-screen elements existed. The existing DOMContentLoaded initialization now runs only after the elements are ready. All questions, app assets and local storage keys are unchanged.
-
-## Version 8.3 critical startup fix
-Moved the quiz-completion celebration check inside `next()` so the app no longer references undefined `weekBonus` or `missionCount` during initial page load. The original `DOMContentLoaded` home initialisation can now execute. No question, source, progress key, or visual assets were modified.
+This is a debug build, not a signed Google Play release. Source and JavaScript syntax were checked, but an APK has not been built or tested on a device in this environment.
