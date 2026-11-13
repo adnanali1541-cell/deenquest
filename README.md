@@ -23,3 +23,6 @@ The home screen now calls `home()` on initial page load so learning modes, topic
 
 ## Version 8.2 startup repair
 Removed an eager `home()` call that ran while the HTML document was still being parsed, before the home-screen elements existed. The existing DOMContentLoaded initialization now runs only after the elements are ready. All questions, app assets and local storage keys are unchanged.
+
+## Version 8.3 critical startup fix
+Moved the quiz-completion celebration check inside `next()` so the app no longer references undefined `weekBonus` or `missionCount` during initial page load. The original `DOMContentLoaded` home initialisation can now execute. No question, source, progress key, or visual assets were modified.
