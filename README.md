@@ -1,18 +1,17 @@
-# DeenQuest Version 7 — Game Experience Upgrade
+# DeenQuest Version 8 — GitHub-ready Android project
 
-Based on the working Version 6 project. Preserves the original 500-question bank, categories, age modes, launcher icon, offline quiz logic, points, streaks and achievements.
+Built from the uploaded working Version 7 project. Existing 500 questions, source references, topic filters, modes, logo, sound, vibration, and offline progress key (`deenquest-v1`) are retained.
 
-## New features
-- Gentle synthesized sound effects for correct answers, incorrect answers, quiz completion and taps. No external audio files or internet needed.
-- Optional haptic vibration (when supported by the phone/WebView).
-- Separate Sound and Vibration on/off settings, saved on-device.
-- Correct-answer animation and perfect-score celebration banner.
-- Reduced-motion accessibility support.
+## Version 8 additions
+- Three daily missions (one quiz, five correct answers, two topics) worth 25 XP each; missions reset using device local date.
+- Seven-day learning journey calendar, streak tracking, and one-time 100 XP bonus when a seven-day streak is first reached.
+- Six additional badges and progress dashboard with answer accuracy and mission rewards.
+- Accessible celebration popup for new mission or streak rewards, respecting reduced-motion preferences.
 
 ## Build
-Upload the extracted *contents* to the repository root (preserve .github/workflows/android.yml), commit to main, then download the APK from the GitHub Actions build artifact. Keep the previous working APK as backup.
+Upload the extracted contents to the **repository root**, preserving `.github/workflows/android.yml`. Run **Actions → Build DeenQuest APK**. Download the debug APK artifact.
 
-## Testing
-Test sound on/off, vibration on/off, correct/wrong answers, 5-question completion, daily challenge and saved progress after restarting the app.
-
-The HTML/JavaScript was syntax checked, but an Android APK has not been compiled in this environment.
+## Notes
+- This is a debug build for testing, not a signed Google Play release.
+- The build and device behavior must be verified via GitHub Actions and your Samsung phone.
+- Existing local progress is preserved only if Android installs the update with the same application ID and compatible signing key. Back up the current APK before upgrading.
