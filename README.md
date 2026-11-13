@@ -15,3 +15,7 @@ Upload the extracted contents to the **repository root**, preserving `.github/wo
 - This is a debug build for testing, not a signed Google Play release.
 - The build and device behavior must be verified via GitHub Actions and your Samsung phone.
 - Existing local progress is preserved only if Android installs the update with the same application ID and compatible signing key. Back up the current APK before upgrading.
+
+
+## Version 8.1 startup fix
+The home screen now calls `home()` on initial page load so learning modes, topics, daily missions, streak, badges, dashboard and saved statistics appear immediately without first starting a quiz. No questions or progress-storage keys were changed.
