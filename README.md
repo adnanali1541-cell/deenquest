@@ -19,3 +19,7 @@ Upload the extracted contents to the **repository root**, preserving `.github/wo
 
 ## Version 8.1 startup fix
 The home screen now calls `home()` on initial page load so learning modes, topics, daily missions, streak, badges, dashboard and saved statistics appear immediately without first starting a quiz. No questions or progress-storage keys were changed.
+
+
+## Version 8.2 startup repair
+Removed an eager `home()` call that ran while the HTML document was still being parsed, before the home-screen elements existed. The existing DOMContentLoaded initialization now runs only after the elements are ready. All questions, app assets and local storage keys are unchanged.
