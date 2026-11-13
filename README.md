@@ -1,12 +1,15 @@
-# DeenQuest Version 3 — Android prototype
+# DeenQuest Version 4 — Visual Upgrade
 
-Changes: strict topic and learning-mode filtering (including daily challenge), 60 additional sourced starter questions, and an app launcher icon. Existing 45 questions retained (105 total). Questions and citations require independent religious/editorial verification before publication. No ads or tracking.
+This is the complete Android project based on the working Version 3.
 
-## Upload to GitHub
-Extract this ZIP, then upload the contents of this directory (not the outer directory) to the root of your `deenquest` repository. GitHub browser uploads may not overwrite existing files; use github.dev or a Git client to replace the files, preserving the `.github/workflows/android.yml` path.
+## Changes
+- Refreshed mobile UI inspired by the design concept: branded header, launcher artwork, 4-column stats, large age and topic selection cards, achievement badges and bottom navigation.
+- Topic counts reflect the actual number of questions for the selected learning mode; no invented question totals.
+- Existing 105-question bank, strict topic filtering, quiz flow, daily challenges and saved progress preserved.
+- Added a simple daily challenge streak (tracked locally).
 
 ## Build
-GitHub Actions > Build DeenQuest APK > Run workflow. Download the debug APK artifact from the successful run. This project has not been compiled in this environment.
+Upload the contents of this folder to the repository root preserving paths, commit, and run the GitHub Actions APK workflow. Keep your current working APK as backup. This build has not been compiled on an Android device here.
 
 ## Important
-The generated artwork is a draft launcher icon. Review the visual, content, app-store requirements, and child-safety policies before publishing. Debug APK is not a signed release AAB.
+Religious content requires independent scholarly review before publication. The visual is a practical implementation inspired by the mockup, not a pixel-identical reproduction.
