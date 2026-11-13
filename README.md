@@ -1,19 +1,18 @@
-# DeenQuest Version 6 — 500 Questions
+# DeenQuest Version 7 — Game Experience Upgrade
 
-Upgrade of the working Version 5 Android app. Preserves design, launcher icon, progress storage key (`deenquest-v1`), gameplay and GitHub Actions build.
+Based on the working Version 6 project. Preserves the original 500-question bank, categories, age modes, launcher icon, offline quiz logic, points, streaks and achievements.
 
-## Content
-Exactly 500 supplied questions, replacing the previous built-in question bank.
-- Quran: 128
-- Prophets: 108
-- Seerah: 107
-- Worship: 107
-- Islamic Calendar: 50
+## New features
+- Gentle synthesized sound effects for correct answers, incorrect answers, quiz completion and taps. No external audio files or internet needed.
+- Optional haptic vibration (when supported by the phone/WebView).
+- Separate Sound and Vibration on/off settings, saved on-device.
+- Correct-answer animation and perfect-score celebration banner.
+- Reduced-motion accessibility support.
 
-Difficulty levels: Kids 156, Teens 190, Adults 154. Topic counts shown in the app are specific to the selected learning mode. Each quiz draws up to five questions from the chosen topic and mode.
+## Build
+Upload the extracted *contents* to the repository root (preserve .github/workflows/android.yml), commit to main, then download the APK from the GitHub Actions build artifact. Keep the previous working APK as backup.
 
-## Upload to GitHub
-Extract the ZIP. Upload all files and folders to the root of your existing `deenquest` GitHub repository, preserving the `.github/workflows/android.yml` path. Replace existing files and commit to `main`. Open Actions > Build DeenQuest APK and download the debug APK artifact.
+## Testing
+Test sound on/off, vibration on/off, correct/wrong answers, 5-question completion, daily challenge and saved progress after restarting the app.
 
-## Notes
-The content is imported from the supplied 500-question JSON; answer indices and structure were validated, but religious accuracy and citations were not independently reviewed. Arrange qualified scholarly review before publication. The Android build was not executed in this environment.
+The HTML/JavaScript was syntax checked, but an Android APK has not been compiled in this environment.
