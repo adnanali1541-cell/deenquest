@@ -1,12 +1,12 @@
-# DeenQuest Version 2 — Android prototype
+# DeenQuest Version 3 — Android prototype
 
-Offline Islamic learning quiz for kids, teens and adults. Includes **45 starter questions** (15 retained from Version 1 plus 30 new questions), topic selection, XP milestones, daily challenges, and local progress. Religious content requires independent review before publication.
+Changes: strict topic and learning-mode filtering (including daily challenge), 60 additional sourced starter questions, and an app launcher icon. Existing 45 questions retained (105 total). Questions and citations require independent religious/editorial verification before publication. No ads or tracking.
 
 ## Upload to GitHub
-Extract this ZIP, open its folder, and **drag the contents** (`app`, `.github`, `README.md`, `build.gradle`, `settings.gradle`) into the repository root. The GitHub browser may omit `.github` during drag/drop; if so create `.github/workflows/android.yml` manually from this ZIP. Replace existing files and commit.
+Extract this ZIP, then upload the contents of this directory (not the outer directory) to the root of your `deenquest` repository. GitHub browser uploads may not overwrite existing files; use github.dev or a Git client to replace the files, preserving the `.github/workflows/android.yml` path.
 
 ## Build
-GitHub Actions → Build DeenQuest APK → run latest workflow. Download `DeenQuest-debug-apk` artifact and extract APK. This is a **debug APK for testing**, not a signed Play Store AAB.
+GitHub Actions > Build DeenQuest APK > Run workflow. Download the debug APK artifact from the successful run. This project has not been compiled in this environment.
 
-## Notes
-Existing `deenquest-v1` local storage is preserved when installing as an update with the same application ID and signing key. GitHub Actions debug signing keys may change between builds, in which case Android will require uninstall/reinstall and local progress will be lost. Export or note your progress first. No advertising, login, network permission, or payment processing.
+## Important
+The generated artwork is a draft launcher icon. Review the visual, content, app-store requirements, and child-safety policies before publishing. Debug APK is not a signed release AAB.
