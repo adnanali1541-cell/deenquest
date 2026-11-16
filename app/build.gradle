@@ -1,3 +1,17 @@
 plugins { id 'com.android.application' }
-android { namespace 'com.deenquest.game'; compileSdk 35
- defaultConfig { applicationId 'com.deenquest.game'; minSdk 23; targetSdk 35; versionCode 8; versionName '8.0' } }
+android {
+  namespace 'com.deenquest.game'
+  compileSdk 35
+  // Fixed debug key (V9.1+) so every GitHub build can install OVER the previous one and keep progress.
+  // For testing only. Google Play releases will use a separate private upload key that is never put on GitHub.
+  signingConfigs {
+    debug {
+      storeFile file('debug.keystore')
+      storePassword 'android'
+      keyAlias 'androiddebugkey'
+      keyPassword 'android'
+    }
+  }
+  defaultConfig { applicationId 'com.deenquest.game'; minSdk 23; targetSdk 35; versionCode 10; versionName '10.0' }
+  buildTypes { debug { signingConfig signingConfigs.debug } }
+}
